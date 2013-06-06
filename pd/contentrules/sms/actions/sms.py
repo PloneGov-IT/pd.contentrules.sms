@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from Acquisition import aq_inner, aq_base
+from Acquisition import aq_inner
 from DateTime import DateTime
 from OFS.SimpleItem import SimpleItem
-from Products.Archetypes.interfaces import IBaseContent
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from pd.contentrules.sms import messageFactory as _, logger
@@ -16,21 +15,21 @@ from zope.formlib import form
 from zope.interface import Interface, implements
 
 
-class ISMSFromFieldAction(IRuleElementData):
+class ISMSFromFieldAction(Interface):
     """Definition of the configuration available for a mail action
     """
     message = schema.Text(
         title=_(u"SMS message"),
         description=_(
             'help_message',
-            default=u"Type in here the message that you want to mail. Some "
-                     "defined content can be replaced:"
-                     "${title} will be replaced by the title of the target item."
-                     "${url} will be replaced by the URL of the item."
+            default=u"Type in here the message that you want to mail. "
+                     "Some defined content can be replaced:"
+                     "${title} will be replaced by the title of the target item. "
+                     "${url} will be replaced by the URL of the item. "
                      "${section_url} will be replaced by the URL of the content the rule is applied to. "
-                     "${section_name} will be replaced by the title of the content the rule is applied."
-                     "${date} will be replace by the date of the content the rule is applied."
-                     "${time} will be replace by the time of the content the rule is applied."),
+                     "${section_name} will be replaced by the title of the content the rule is applied. "
+                     "${date} will be replace by the date of the content the rule is applied. "
+                     "${time} will be replace by the time of the content the rule is applied. "),
                     required=True
         )
 
@@ -39,7 +38,7 @@ class SMSFromFieldAction(SimpleItem):
     """
     The implementation of the action defined before
     """
-    implements(ISMSFromFieldAction)
+    implements(ISMSFromFieldAction, IRuleElementData)
 
     message = u''
 
@@ -108,6 +107,7 @@ class SMSActionExecutor(object):
         '''
         The mobile number for the SMS mail
         '''
+        # BBB: check campo mobile esiste
         mobile = self.event.object.getMobile()
         mobile = ''.join(mobile.split())
         return [mobile + '@sms.comune.padova.it']
@@ -153,7 +153,8 @@ class SMSFromFieldAddForm(AddForm):
     """
     form_fields = form.FormFields(ISMSFromFieldAction)
     label = _(u"Add sms from field action")
-    description = _(u"A sms send action that take the mobile number from the content where the rule is activated.")
+    description = _(u"A sms send action that take the mobile number "
+                    u"from the content where the rule is activated.")
     form_name = _(u"Configure element")
 
     def create(self, data):
@@ -168,5 +169,6 @@ class SMSFromFieldEditForm(EditForm):
     """
     form_fields = form.FormFields(ISMSFromFieldAction)
     label = _(u"Add sms from field action")
-    description = _(u"A sms send action that take the mobile number from the content where the rule is activated.")
+    description = _(u"A sms send action that take the mobile number "
+                    u"from the content where the rule is activated.")
     form_name = _(u"Configure element")
