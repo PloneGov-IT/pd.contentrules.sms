@@ -31,10 +31,10 @@ msgid "SMS message"
 msgstr "Messaggio SMS"
 
 msgid "Send an email, take the recipient from data of the content itself."
-msgstr ""
+msgstr "Invio messaggio, i destinatario corrisponde al numero di cellulare preso dal contesto"
 
 msgid "Send email to address taken from the content"
-msgstr ""
+msgstr "Invio email al servizio SMS"
 
 #. Default: "SMS to users defined in the mobile data field"
 #: ./actions/sms.py:50
