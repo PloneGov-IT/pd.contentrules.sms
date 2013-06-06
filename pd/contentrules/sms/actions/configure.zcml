@@ -1,0 +1,40 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  xmlns:five="http://namespaces.zope.org/five"
+  i18n_domain="pd.contentrules.sms">
+
+  <include package="plone.contentrules" />
+  <include package="plone.contentrules" file="meta.zcml" />
+
+  <!-- Email action definition -->
+  <adapter factory=".sms.SMSActionExecutor" />
+
+  <browser:page
+    for="plone.app.contentrules.browser.interfaces.IRuleActionAdding"
+    name="pd.actions.SMSFromField"
+    class=".sms.SMSFromFieldAddForm"
+    permission="cmf.ManagePortal"
+    />
+
+  <browser:page
+    for=".sms.ISMSFromFieldAction"
+    name="edit"
+    class=".sms.SMSFromFieldEditForm"
+    permission="cmf.ManagePortal"
+    />
+
+  <plone:ruleAction
+    name="pd.actions.SMSFromField"
+    title="Send a sms taken from the content"
+    description="Send a sms, take the recipient from data of the content itself."
+    for="*"
+    event="zope.component.interfaces.IObjectEvent"
+    addview="pd.actions.SMSFromField"
+    editview="edit"
+    schema=".sms.ISMSFromFieldAction"
+    factory=".sms.SMSFromFieldAction"
+    />
+
+</configure>

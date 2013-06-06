@@ -1,0 +1,119 @@
+# Alessandro Pisa <alessandro.pisa@redturtle.it>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: collective.contentrules.mailfromfield\n"
+"POT-Creation-Date: 2013-05-21 22:20+0000\n"
+"PO-Revision-Date: 2013-05-22 00:22+0200\n"
+"Last-Translator: Alessandro Pisa <alessandro.pisa@redturtle.it>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: it\n"
+"Language-Name: Italian\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: pd.contentrules.sms\n"
+"Language: en_US\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../actions/mail.py:241
+msgid ""
+"A mail action that take the e-mail address from the content where the rule is "
+"activated."
+msgstr ""
+"Una azione di invio e-mail che prende l'indirizzo dal contenuto sul quale la "
+"regola è attivata"
+
+#: ../actions/mail.py:240
+msgid "Add mail from field action"
+msgstr "Aggiungi azione \"e-mail dal contenuto\""
+
+#: ../actions/mail.py:242
+msgid "Configure element"
+msgstr "Configura elemento"
+
+#: ../vocabularies.py:23
+msgid "From event target"
+msgstr "Dall'obbiettivo dell'evento"
+
+#: ../vocabularies.py:21
+msgid "From trigger object"
+msgstr "Dall'oggetto scatenante"
+
+#: ../vocabularies.py:22
+msgid "From trigger object parent"
+msgstr "Dal padre dell'oggetto scatenante"
+
+#: ../actions/mail.py:59
+msgid "Mail message"
+msgstr "Messaggio e-mail"
+
+#: ../actions/mail.py:40
+msgid ""
+"Put there the field name from which get the e-mail. You can provide an "
+"attribute name, a method name, an AT field name or ZMI property"
+msgstr ""
+"Inserisci qui il nome del campo dal quale vuoi estrarre l'e-mail.\n"
+"Puoi fornire il nome di un attributo, di un metodo, di un campo AT o una "
+"property ZMI"
+
+msgid "Send an email, take the recipient from data of the content itself."
+msgstr ""
+"Invia una e-mail, prendi il destinatario da dati ottenuto dal contenuto "
+"stesso."
+
+msgid "Send email to address taken from the content"
+msgstr "Invio e-mail ad indirizzo ottenuto dal contenuto"
+
+#: ../actions/mail.py:32
+msgid "Sender email"
+msgstr "Mittente e-mail"
+
+#: ../actions/mail.py:39
+msgid "Source field"
+msgstr "Campo sorgente"
+
+#: ../actions/mail.py:26
+msgid "Subject"
+msgstr "Oggetto"
+
+#: ../actions/mail.py:27
+msgid "Subject of the message"
+msgstr "Oggetto del messaggio"
+
+#: ../actions/mail.py:48
+msgid "Target element"
+msgstr "Obbiettivo dell'elemento"
+
+#: ../actions/mail.py:33
+msgid ""
+"The email address that sends the email. If no email is provided here, it will "
+"use the portal from address."
+msgstr ""
+"L'indirizzo e-mail del mittente. Se non viene specificato nessun indirizzo "
+"verranno usate le impostazioni del sito."
+
+#. Default: "Email to users defined in the \"${fieldName}\" data"
+#: ../actions/mail.py:87
+msgid "action_summary"
+msgstr "E-mail agli utenti definiti dal dato \"${fieldName}\""
+
+#. Default: "Type in here the message that you want to mail. Some defined content can be replaced: ${title} will be replaced by the title of the target item. ${url} will be replaced by the URL of the item. ${section_url} will be replaced by the URL of the content the rule is applied to. ${section_name} will be replaced by the title of the content the rule is applied to."
+#: ../actions/mail.py:60
+msgid "help_message"
+msgstr ""
+"Scrivi qui il messaggio che vuoi inviare.\n"
+"Alcuni contenuti definiti possono essere rimpiazzati ${title} verrà "
+"rimpiazzato dal nome dell'obbiettivo dell'evento. ${url} verrà rimpiazzato "
+"dall'URL dell'obbiettivo dell'evento. ${section_url} verrà rimpiazzato "
+"dall'URL della sezione su cui la regola è applicata. "
+
+#. Default: "Choose to get the address info from the content where the rule is activated on or from the target element of the event."
+#: ../actions/mail.py:49
+msgid "help_target"
+msgstr ""
+"Scegli se ottenere l'indirizzo dal contentuto dove la regola è attivata o se "
+"dall'elemento che ha scatenato la regola stessa."
+
+

@@ -1,0 +1,96 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2013-05-21 22:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: pd.contentrules.sms\n"
+
+#: ../actions/mail.py:241
+msgid "A mail action that take the e-mail address from the content where the rule is activated."
+msgstr ""
+
+#: ../actions/mail.py:240
+msgid "Add mail from field action"
+msgstr ""
+
+#: ../actions/mail.py:242
+msgid "Configure element"
+msgstr ""
+
+#: ../vocabularies.py:23
+msgid "From event target"
+msgstr ""
+
+#: ../vocabularies.py:21
+msgid "From trigger object"
+msgstr ""
+
+#: ../vocabularies.py:22
+msgid "From trigger object parent"
+msgstr ""
+
+#: ../actions/mail.py:59
+msgid "Mail message"
+msgstr ""
+
+#: ../actions/mail.py:40
+msgid "Put there the field name from which get the e-mail. You can provide an attribute name, a method name, an AT field name or ZMI property"
+msgstr ""
+
+msgid "Send an email, take the recipient from data of the content itself."
+msgstr ""
+
+msgid "Send email to address taken from the content"
+msgstr ""
+
+#: ../actions/mail.py:32
+msgid "Sender email"
+msgstr ""
+
+#: ../actions/mail.py:39
+msgid "Source field"
+msgstr ""
+
+#: ../actions/mail.py:26
+msgid "Subject"
+msgstr ""
+
+#: ../actions/mail.py:27
+msgid "Subject of the message"
+msgstr ""
+
+#: ../actions/mail.py:48
+msgid "Target element"
+msgstr ""
+
+#: ../actions/mail.py:33
+msgid "The email address that sends the email. If no email is provided here, it will use the portal from address."
+msgstr ""
+
+#. Default: "Email to users defined in the \"${fieldName}\" data"
+#: ../actions/mail.py:87
+msgid "action_summary"
+msgstr ""
+
+#. Default: "Type in here the message that you want to mail. Some defined content can be replaced: ${title} will be replaced by the title of the target item. ${url} will be replaced by the URL of the item. ${section_url} will be replaced by the URL of the content the rule is applied to. ${section_name} will be replaced by the title of the content the rule is applied to."
+#: ../actions/mail.py:60
+msgid "help_message"
+msgstr ""
+
+#. Default: "Choose to get the address info from the content where the rule is activated on or from the target element of the event."
+#: ../actions/mail.py:49
+msgid "help_target"
+msgstr ""
+
