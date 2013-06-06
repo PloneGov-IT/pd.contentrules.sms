@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -19,7 +16,7 @@ msgstr ""
 
 #: ./actions/sms.py:156
 msgid "A sms send action that take the mobile number from the content where the rule is activated."
-msgstr ""
+msgstr "Azione invio sms al numero indicato nel contensto al quale è applicata la regola"
 
 #: ./actions/sms.py:155
 msgid "Add sms from field action"
@@ -27,11 +24,11 @@ msgstr ""
 
 #: ./actions/sms.py:157
 msgid "Configure element"
-msgstr ""
+msgstr "Configura la sezione relativa alla regola"
 
 #: ./actions/sms.py:23
 msgid "SMS message"
-msgstr ""
+msgstr "Messaggio SMS"
 
 msgid "Send an email, take the recipient from data of the content itself."
 msgstr ""
