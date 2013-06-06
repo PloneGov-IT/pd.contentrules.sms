@@ -42,12 +42,10 @@ class SMSFromFieldAction(SimpleItem):
 
     message = u''
 
-    element = 'pd.actions.SMSFromField'
+    element = u'pd.actions.SMSFromField'
 
-    @property
-    def summary(self):
-        return _('action_summary',
-                 default=u'SMS to users defined in the mobile data field')
+    summary = _('action_summary',
+                default=u'SMS to users defined in the mobile data field')
 
 
 class SMSActionExecutor(object):
