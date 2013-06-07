@@ -107,6 +107,8 @@ class SMSActionExecutor(object):
         '''
         # BBB: check campo mobile esiste
         mobile = self.event.object.getMobile()
+        if not mobile:
+            return
         mobile = ''.join(mobile.split())
         return [mobile + '@sms.comune.padova.it']
 
