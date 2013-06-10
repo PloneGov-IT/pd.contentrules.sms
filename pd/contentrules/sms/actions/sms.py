@@ -8,6 +8,7 @@ from Products.CMFPlone.utils import safe_unicode
 from pd.contentrules.sms import messageFactory as _, logger
 from plone.app.contentrules.browser.formhelper import AddForm, EditForm
 from plone.contentrules.rule.interfaces import IRuleElementData, IExecutable
+from rg.prenotazioni.content.prenotazione import Prenotazione
 from zope import schema
 from zope.component import adapts
 from zope.component.interfaces import ComponentLookupError
@@ -29,9 +30,17 @@ class ISMSFromFieldAction(Interface):
                      "${section_url} will be replaced by the URL of the content the rule is applied to. "
                      "${section_name} will be replaced by the title of the content the rule is applied. "
                      "${date} will be replace by the date of the content the rule is applied. "
-                     "${time} will be replace by the time of the content the rule is applied. "),
+                     "${time} will be replace by the time of the content the rule is applied. "
+                     "${gate} will be replace by the gate value of the content the rule is applied. "),
                     required=True
         )
+
+    sms_domain = schema.TextLine(
+        title=_(u"SMS email domain"),
+        description=_('sms_domain_help',
+                      default=u"The email domain name used to send sms messages"),
+         required=True
+         )
 
 
 class SMSFromFieldAction(SimpleItem):
@@ -41,6 +50,7 @@ class SMSFromFieldAction(SimpleItem):
     implements(ISMSFromFieldAction, IRuleElementData)
 
     message = u''
+    sms_domain = u''
 
     element = u'pd.actions.SMSFromField'
 
@@ -70,17 +80,20 @@ class SMSActionExecutor(object):
     def get_mapping(self):
         '''Return a mapping that will replace markers in the template
         '''
+        plone = self.context.restrictedTraverse('@@plone')
         obj_title = safe_unicode(self.event.object.Title())
         event_url = self.event.object.absolute_url()
         section_title = safe_unicode(self.context.Title())
         section_url = self.context.absolute_url()
-        p_date = DateTime(self.event.object.Date())
+        date = DateTime(self.event.object.Date())
+        gate = self.event.object.getGate()
         return {"url": event_url,
                 "title": obj_title,
                 "section_name": section_title,
                 "section_url": section_url,
-                "date": p_date.strftime("%d/%m/%Y"),
-                "time": p_date.strftime("%H:%M")}
+                "date": plone.toLocalizedTime(date),
+                "time": plone.toLocalizedTime(date, time_only=True),
+                "gate": gate}
 
     def expand_markers(self, text):
         '''Replace markers in text with the values in the mapping
@@ -105,12 +118,14 @@ class SMSActionExecutor(object):
         '''
         The mobile number for the SMS mail
         '''
-        # BBB: check campo mobile esiste
+        if not isinstance(self.event.object, Prenotazione):
+            return []
         mobile = self.event.object.getMobile()
-        if not mobile:
+        domain = self.element.sms_domain
+        if not mobile or not domain:
             return []
         mobile = ''.join(mobile.split())
-        return [mobile + '@sms.comune.padova.it']
+        return [mobile + '@' + domain]
 
     def get_mailhost(self):
         '''

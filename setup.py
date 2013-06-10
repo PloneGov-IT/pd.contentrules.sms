@@ -5,7 +5,7 @@ version = '1.0'
 
 setup(name='pd.contentrules.sms',
       version=version,
-      description="This product allow creation of content rules in order to send sms to customers",
+      description="This product allows creation of content rules in order to send sms to customers",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
@@ -16,7 +16,7 @@ setup(name='pd.contentrules.sms',
       keywords='',
       author='',
       author_email='',
-      url='http://svn.plone.org/svn/collective/',
+      url='',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['pd', 'pd.contentrules'],
