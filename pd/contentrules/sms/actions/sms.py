@@ -31,7 +31,9 @@ class ISMSFromFieldAction(Interface):
                      "${section_name} will be replaced by the title of the content the rule is applied. "
                      "${date} will be replace by the date of the content the rule is applied. "
                      "${time} will be replace by the time of the content the rule is applied. "
-                     "${gate} will be replace by the gate value of the content the rule is applied. "),
+                     "${gate} will be replace by the gate value of the content the rule is applied. "
+                     "${type} will be replace by the type value of the content the rule is applied. "
+                     "to."),
                     required=True
         )
 
@@ -87,13 +89,15 @@ class SMSActionExecutor(object):
         section_url = self.context.absolute_url()
         date = DateTime(self.event.object.Date())
         gate = self.event.object.getGate()
+        book_type = self.event.object.getTipologia_prenotazione()
         return {"url": event_url,
                 "title": obj_title,
                 "section_name": section_title,
                 "section_url": section_url,
                 "date": plone.toLocalizedTime(date),
                 "time": plone.toLocalizedTime(date, time_only=True),
-                "gate": gate}
+                "gate": gate,
+                "type": book_type}
 
     def expand_markers(self, text):
         '''Replace markers in text with the values in the mapping
