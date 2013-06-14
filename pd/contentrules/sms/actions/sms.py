@@ -124,7 +124,12 @@ class SMSActionExecutor(object):
         '''
         if not isinstance(self.event.object, Prenotazione):
             return []
-        mobile = self.event.object.getMobile()
+        event_obj = self.event.object
+        email = event_obj.getEmail()
+        # Don't send an sms when we can send an email (which is cheaper!)
+        if email:
+            return []
+        mobile = event_obj.getMobile()
         domain = self.element.sms_domain
         if not mobile or not domain:
             return []
