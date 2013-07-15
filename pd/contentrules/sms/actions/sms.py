@@ -103,7 +103,9 @@ class SMSActionExecutor(object):
         '''Replace markers in text with the values in the mapping
         '''
         for key, value in self.mapping.iteritems():
-            text = text.replace('${%s}' % key, value.decode('utf-8'))
+            if not isinstance(value, unicode):
+                value = value.decode('utf-8')
+            text = text.replace('${%s}' % key, value)
         return text
 
     def get_from(self):
