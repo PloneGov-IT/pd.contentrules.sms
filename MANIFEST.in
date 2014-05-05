@@ -1,0 +1,7 @@
+include *.txt
+
+recursive-include docs *
+recursive-include pd *
+
+global-exclude *.pyc
+global-include *.mo
