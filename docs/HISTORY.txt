@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.0dev (unreleased)
--------------------
+1.0.0 (2014-05-05)
+------------------
 
 - fix errore unicode in replace "Sportelli preposti" [nicolasenno]
 - Initial release
