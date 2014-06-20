@@ -4,7 +4,8 @@ Changelog
 1.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Documentation
+- Added a dependency from rg.prenotazioni
 
 
 1.0.0 (2014-05-05)

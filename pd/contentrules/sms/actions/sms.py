@@ -17,35 +17,41 @@ from zope.interface import Interface, implements
 
 
 class ISMSFromFieldAction(Interface):
+
     """Definition of the configuration available for a mail action
     """
     message = schema.Text(
         title=_(u"SMS message"),
         description=_(
             'help_message',
-            default=u"Type in here the message that you want to mail. "
-                     "Some defined content can be replaced:"
-                     "${title} will be replaced by the title of the target item. "
-                     "${url} will be replaced by the URL of the item. "
-                     "${section_url} will be replaced by the URL of the content the rule is applied to. "
-                     "${section_name} will be replaced by the title of the content the rule is applied. "
-                     "${date} will be replace by the date of the content the rule is applied. "
-                     "${time} will be replace by the time of the content the rule is applied. "
-                     "${gate} will be replace by the gate value of the content the rule is applied. "
-                     "${type} will be replace by the type value of the content the rule is applied. "
-                     "to."),
-                    required=True
-        )
+            default=(
+                u"Type in here the message that you want to mail. "
+                u"Some defined content can be replaced:"
+                u"${title} will be replaced by the title of the target item. "
+                u"${url} will be replaced by the URL of the item. "
+                u"${section_url} will be replaced by the URL of the content the rule is applied to. "  # noqa
+                u"${section_name} will be replaced by the title of the content the rule is applied. "  # noqa
+                u"${date} will be replace by the date of the content the rule is applied. "  # noqa
+                u"${time} will be replace by the time of the content the rule is applied. "  # noqa
+                u"${gate} will be replace by the gate value of the content the rule is applied. "  # noqa
+                u"${type} will be replace by the type value of the content the rule is applied. "  # noqa
+                u"to.")
+        ),
+        required=True
+    )
 
     sms_domain = schema.TextLine(
         title=_(u"SMS email domain"),
-        description=_('sms_domain_help',
-                      default=u"The email domain name used to send sms messages"),
-         required=True
-         )
+        description=_(
+            'sms_domain_help',
+            default=u"The email domain name used to send sms messages"
+        ),
+        required=True
+    )
 
 
 class SMSFromFieldAction(SimpleItem):
+
     """
     The implementation of the action defined before
     """
@@ -61,6 +67,7 @@ class SMSFromFieldAction(SimpleItem):
 
 
 class SMSActionExecutor(object):
+
     """The executor for this action.
     """
     implements(IExecutable)
@@ -174,6 +181,7 @@ class SMSActionExecutor(object):
 
 
 class SMSFromFieldAddForm(AddForm):
+
     """
     An add form for the sms action
     """
@@ -190,6 +198,7 @@ class SMSFromFieldAddForm(AddForm):
 
 
 class SMSFromFieldEditForm(EditForm):
+
     """
     An edit form for the sms action
     """
