@@ -10,6 +10,7 @@ Further customizations for `rg.prenotazioni`__ can be found in the product
 `pd.prenotazioni`__
 
 __ https://pypi.python.org/pypi/rg.prenotazioni
+__ https://pypi.python.org/pypi/rg.prenotazioni
 __ https://pypi.python.org/pypi/pd.prenotazioni
 
 
@@ -51,5 +52,3 @@ This product was developed by RedTurtle Technology team.
 .. image:: http://www.redturtle.it/redturtle_banner.png
    :alt: RedTurtle Technology Site
       :target: http://www.redturtle.it/
-
-
