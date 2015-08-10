@@ -38,9 +38,12 @@ setup(
     install_requires=[
         'setuptools',
         # -*- Extra requirements: -*-
+        'plone.app.contentrules',
         'rg.prenotazioni',
     ],
     entry_points="""
       # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
 )
