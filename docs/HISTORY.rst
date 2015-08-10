@@ -1,10 +1,11 @@
 Changelog
 =========
 
-1.0.2 (unreleased)
+1.0.2 (2015-08-10)
 ------------------
 
-- Nothing changed yet.
+- Fix autoinclude issues
+  [ale-rt]
 
 
 1.0.1 (2014-09-24)
